@@ -1,0 +1,11 @@
+name: ii-bioinfo-py2
+channels:
+  - auto
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+ - meme 
+ - bedtools
+ - macs=1.4.3
+

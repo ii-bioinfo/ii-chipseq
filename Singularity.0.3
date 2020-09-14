@@ -1,0 +1,58 @@
+
+From:continuumio/miniconda:4.7.12
+Bootstrap:docker
+
+%labels
+    MAINTAINER imp/imba bioinformatics core <bioinfo.grp@imp.ac.at>
+    DESCRIPTION Container image containing all binary dependencies for the ii-chipseq pipeline
+    VERSION 0.3
+
+
+##############################
+# py2
+##############################
+
+%appenv py2
+    PATH=/opt/conda/envs/ii-bioinfo-py2/bin:$PATH
+    export PATH
+
+%appfiles py2
+    environment_py2.yaml /
+
+%appinstall py2
+    apt-get update
+    apt-get install -y procps unzip
+    /opt/conda/bin/conda env create -f /scif/apps/py2/environment_py2.yaml
+    /opt/conda/bin/conda clean -a
+
+##############################
+# py3
+##############################
+
+%appenv py3
+    PATH=/opt/conda/envs/ii-bioinfo-py3/bin:$PATH
+    export PATH
+
+%appfiles py3
+    environment_py3.yaml /
+
+%appinstall py3
+    apt-get update
+    apt-get install -y unzip procps
+    /opt/conda/bin/conda env create -f /scif/apps/py3/environment_py3.yaml
+    /opt/conda/bin/conda clean -a
+
+
+
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install hg38
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install mm10
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install dm6
+
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install fly-o
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install fly-p
+
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install human-o
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install human-p
+
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install mouse-o
+    perl /opt/conda/envs/ii-bioinfo-py3/share/homer/configureHomer.pl -install mouse-p
