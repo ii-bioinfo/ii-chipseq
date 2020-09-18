@@ -1,0 +1,80 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: ii-bioinfo-py3
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - anaconda
+  - genomedk
+dependencies:
+  # nf core versions
+  - r-magick
+  - r-ggupset
+  - anaconda::bz2file
+  - bwa=0.7.17
+  - bedtools=2.27.1
+  - samtools=1.10
+  - picard
+  - trim-galore=0.4.5
+  - python=3.6
+  - homer
+  - multiqc
+  - deeptools
+  - idr
+  - meme
+  - ucsc-facount
+  - fastqc
+  - qualimap
+  - markupsafe
+  - gawk
+  - bioconda::parallel
+  - r-ggupset
+  - r-ggplotify
+  - bioconductor-enrichplot
+  - conda-forge::pandoc
+  - conda-forge::r-base
+  - conda-forge::r-cairo
+  - conda-forge::r-catools
+  - conda-forge::r-domc
+  - conda-forge::r-doparallel
+  - conda-forge::r-dt
+  - conda-forge::r-evaluate
+  - conda-forge::r-extrafont
+  - conda-forge::r-extrafontdb
+  - conda-forge::r-gdata
+  - conda-forge::r-ggplot2
+  - conda-forge::r-gplots
+  - conda-forge::r-kableextra=1.1.0
+  - conda-forge::r-knitr=1.28
+  - conda-forge::r-markdown
+  - conda-forge::r-openxlsx
+  - conda-forge::r-pheatmap
+  - conda-forge::r-r.utils
+  - conda-forge::r-rcolorbrewer
+  - conda-forge::r-reshape2
+  - conda-forge::r-rmarkdown
+  - conda-forge::r-rmysql
+  - conda-forge::r-snow
+  - bioconda::r-spp
+  - conda-forge::r-tidyverse
+  - conda-forge::r-upsetr
+  - conda-forge::r-zip
+  - bioconda::bioconductor-atacseqqc
+  - bioconda::bioconductor-biocparallel
+  - bioconda::bioconductor-biomart
+  - bioconda::bioconductor-chippeakanno
+  - bioconda::bioconductor-chipseeker=1.22.0
+  - bioconda::bioconductor-clusterprofiler
+  - bioconda::bioconductor-diffbind
+  - bioconda::bioconductor-dose
+  - bioconda::bioconductor-ensembldb
+  - bioconda::bioconductor-genomicfeatures
+  - bioconda::bioconductor-genomicranges
+  - bioconda::bioconductor-motifdb
+  - bioconda::bioconductor-rsamtools
+  - bioconda::bioconductor-rtracklayer
+  - bioconda::bioconductor-shortread
+  - bioconda::bioconductor-tracktables
+  - bioconda::bioconductor-txdb.hsapiens.ucsc.hg19.knowngene
+
